@@ -34,13 +34,13 @@ def simulate_rule(rule_num, num_drops, random_variations):
             funnel_positions[i] = [0, 0]  # Воронка всегда в центре
 
         # Правило 2: двигать воронку в противоположную сторону от последнего положения шарика
-        # относительно предыдущего положения воронки
+        # относительно центра мишени
         elif rule_num == 2:
-            # Вычисляем отклонение шарика от воронки
-            deviation_x = ball_positions[i - 1, 0] - funnel_positions[i - 1, 0]
-            deviation_y = ball_positions[i - 1, 1] - funnel_positions[i - 1, 1]
+            # Вычисляем отклонение шарика от центра мишени (0,0)
+            deviation_x = ball_positions[i - 1, 0] - 0  # 0 - это центр мишени
+            deviation_y = ball_positions[i - 1, 1] - 0
 
-            # Двигаем воронку в противоположном направлении
+            # Двигаем воронку в противоположном направлении от её текущего положения
             funnel_positions[i] = [
                 funnel_positions[i - 1, 0] - deviation_x,
                 funnel_positions[i - 1, 1] - deviation_y,
