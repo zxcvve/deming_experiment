@@ -119,8 +119,8 @@ for rule in range(1, 5):
 
     # Настраиваем ось
     ax.set_aspect("equal")
-    ax.set_xlim(-10, 10)
-    ax.set_ylim(-10, 10)
+    ax.set_xlim(-15, 15)
+    ax.set_ylim(-15, 15)
     ax.grid(True)
     ax.set_title(f"Правило {rule}")
     ax.set_xlabel("X координата")
