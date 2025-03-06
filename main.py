@@ -157,12 +157,18 @@ plt.show()
 # Общая таблица результатов
 print("Результаты эксперимента Деминга:")
 print("=" * 60)
-print(f"{'Правило':<10} {'Среднее расстояние':<20} {'Стд. отклонение':<20}")
+print(
+    f"{'Правило':<10} {'Среднее расстояние':<20} {'Стд. отклонение':<20} {'Макс. расстояние':<20} {'Мин. расстояние':<20}"
+)
 print("-" * 60)
 for rule in range(1, 5):
     ball_pos = results[rule]["ball"]
     distances = np.sqrt(ball_pos[:, 0] ** 2 + ball_pos[:, 1] ** 2)
     avg_distance = np.mean(distances)
     std_distance = np.std(distances)
-    print(f"{rule:<10} {avg_distance:<20.2f} {std_distance:<20.2f}")
+    max_distance = np.max(distances)
+    min_distance = np.min(distances)
+    print(
+        f"{rule:<10} {avg_distance:<20.2f} {std_distance:<20.2f} {max_distance:<20.2f} {min_distance:<20.2f}"
+    )
 print("=" * 60)
